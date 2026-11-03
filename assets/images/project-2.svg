@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="simtokoBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0609" />
+      <stop offset="50%" stop-color="#180711" />
+      <stop offset="100%" stop-color="#080406" />
+    </linearGradient>
+    <linearGradient id="phoneGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1b0a15" />
+      <stop offset="100%" stop-color="#10050c" />
+    </linearGradient>
+    <linearGradient id="btnBurgundy" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#80112c" />
+      <stop offset="100%" stop-color="#e63956" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#simtokoBg)" />
+
+  <!-- Ambient Glow -->
+  <circle cx="280" cy="250" r="170" fill="#80112c" opacity="0.35" filter="blur(70px)" />
+  <circle cx="600" cy="220" r="150" fill="#e63956" opacity="0.18" filter="blur(60px)" />
+
+  <!-- Center-Left: Mobile Phone 1 (Kasir / POS Screen) -->
+  <g transform="translate(140, 25)">
+    <!-- Phone Outer Shell -->
+    <rect x="0" y="0" width="240" height="450" rx="36" fill="#1e0c17" stroke="#80112c" stroke-width="2" />
+    <!-- Phone Screen -->
+    <rect x="8" y="8" width="224" height="434" rx="28" fill="url(#phoneGrad)" />
+
+    <!-- Speaker Notch -->
+    <rect x="80" y="16" width="64" height="12" rx="6" fill="#0c0408" />
+
+    <!-- App Header -->
+    <text x="24" y="55" fill="#f5f5f7" font-family="system-ui, sans-serif" font-weight="bold" font-size="14">SIMTOKO Mobile</text>
+    <rect x="150" y="42" width="62" height="18" rx="9" fill="#2d0f1f" stroke="#e63956" stroke-width="0.8" />
+    <text x="181" y="55" fill="#e63956" font-family="system-ui, sans-serif" font-size="8" font-weight="bold" text-anchor="middle">KASIR</text>
+
+    <!-- Total Sales Box -->
+    <rect x="20" y="70" width="184" height="54" rx="10" fill="#260f1d" stroke="#80112c" stroke-width="0.8" />
+    <text x="32" y="88" fill="#a1a1aa" font-family="system-ui, sans-serif" font-size="9">Total Transaksi Hari Ini</text>
+    <text x="32" y="112" fill="#ffffff" font-family="system-ui, sans-serif" font-weight="bold" font-size="16">Rp 4.850.000</text>
+
+    <!-- Product List -->
+    <text x="22" y="145" fill="#71717a" font-family="system-ui, sans-serif" font-size="9" font-weight="bold">KERANJANG TRANSAKSI</text>
+
+    <!-- Item 1 -->
+    <rect x="20" y="155" width="184" height="48" rx="8" fill="#1b0914" stroke="#80112c" stroke-width="0.6" />
+    <rect x="28" y="163" width="32" height="32" rx="6" fill="#2d0f1f" />
+    <text x="68" y="177" fill="#f5f5f7" font-family="system-ui, sans-serif" font-size="10" font-weight="600">Beras Premium 5kg</text>
+    <text x="68" y="193" fill="#e63956" font-family="system-ui, sans-serif" font-size="9">2 x Rp 72.000</text>
+    <text x="188" y="185" fill="#ffffff" font-family="system-ui, sans-serif" font-size="10" font-weight="bold" text-anchor="end">144k</text>
+
+    <!-- Item 2 -->
+    <rect x="20" y="210" width="184" height="48" rx="8" fill="#1b0914" stroke="#80112c" stroke-width="0.6" />
+    <rect x="28" y="218" width="32" height="32" rx="6" fill="#2d0f1f" />
+    <text x="68" y="232" fill="#f5f5f7" font-family="system-ui, sans-serif" font-size="10" font-weight="600">Minyak Goreng 2L</text>
+    <text x="68" y="248" fill="#e63956" font-family="system-ui, sans-serif" font-size="9">1 x Rp 36.000</text>
+    <text x="188" y="240" fill="#ffffff" font-family="system-ui, sans-serif" font-size="10" font-weight="bold" text-anchor="end">36k</text>
+
+    <!-- Item 3 -->
+    <rect x="20" y="265" width="184" height="48" rx="8" fill="#1b0914" stroke="#80112c" stroke-width="0.6" />
+    <rect x="28" y="273" width="32" height="32" rx="6" fill="#2d0f1f" />
+    <text x="68" y="287" fill="#f5f5f7" font-family="system-ui, sans-serif" font-size="10" font-weight="600">Gula Pasir 1kg</text>
+    <text x="68" y="303" fill="#e63956" font-family="system-ui, sans-serif" font-size="9">3 x Rp 17.500</text>
+    <text x="188" y="295" fill="#ffffff" font-family="system-ui, sans-serif" font-size="10" font-weight="bold" text-anchor="end">52.5k</text>
+
+    <!-- Total Checkout Bar -->
+    <rect x="20" y="330" width="184" height="60" rx="10" fill="#230d1a" stroke="#e63956" stroke-width="0.8" />
+    <text x="32" y="348" fill="#a1a1aa" font-family="system-ui, sans-serif" font-size="8">TOTAL BELANJA</text>
+    <text x="32" y="372" fill="#ffffff" font-family="system-ui, sans-serif" font-weight="bold" font-size="15">Rp 232.500</text>
+
+    <!-- Pay Button -->
+    <rect x="20" y="400" width="184" height="30" rx="8" fill="url(#btnBurgundy)" />
+    <text x="112" y="419" fill="#ffffff" font-family="system-ui, sans-serif" font-size="10" font-weight="bold" text-anchor="middle">Bayar / Checkout →</text>
+  </g>
+
+  <!-- Right Side: Feature Overview / Multi-Role Cards -->
+  <g transform="translate(420, 50)">
+    <text x="0" y="25" fill="#e63956" font-family="system-ui, sans-serif" font-weight="bold" font-size="11" letter-spacing="2">FLUTTER &amp; NODE.JS BACKEND</text>
+    <text x="0" y="58" fill="#ffffff" font-family="system-ui, sans-serif" font-weight="bold" font-size="22">Sistem Toko Multi-Role</text>
+    <text x="0" y="82" fill="#a1a1aa" font-family="system-ui, sans-serif" font-size="12">Manajemen operasional kasir, stok gudang &amp; omset pemilik</text>
+
+    <!-- Role 1 Card: Owner -->
+    <rect x="0" y="105" width="320" height="68" rx="10" fill="#180913" stroke="#80112c" stroke-width="0.9" />
+    <circle cx="28" cy="139" r="14" fill="#80112c" />
+    <text x="28" y="143" fill="#ffffff" font-family="system-ui, sans-serif" font-weight="bold" font-size="10" text-anchor="middle">👑</text>
+    <text x="54" y="130" fill="#f5f5f7" font-family="system-ui, sans-serif" font-weight="bold" font-size="13">Role Owner / Pemilik</text>
+    <text x="54" y="150" fill="#a1a1aa" font-family="system-ui, sans-serif" font-size="10">Dashboard grafik omset &amp; kelola hak akses akun</text>
+
+    <!-- Role 2 Card: Kasir -->
+    <rect x="0" y="185" width="320" height="68" rx="10" fill="#250d1d" stroke="#e63956" stroke-width="1.2" />
+    <circle cx="28" cy="219" r="14" fill="#e63956" />
+    <text x="28" y="223" fill="#ffffff" font-family="system-ui, sans-serif" font-weight="bold" font-size="10" text-anchor="middle">💳</text>
+    <text x="54" y="210" fill="#ffffff" font-family="system-ui, sans-serif" font-weight="bold" font-size="13">Role Kasir (POS Terminal)</text>
+    <text x="54" y="230" fill="#f5f5f7" font-family="system-ui, sans-serif" font-size="10">Pencarian produk instan, kalkulasi &amp; cetak riwayat</text>
+
+    <!-- Role 3 Card: Petugas Gudang -->
+    <rect x="0" y="265" width="320" height="68" rx="10" fill="#180913" stroke="#80112c" stroke-width="0.9" />
+    <circle cx="28" cy="299" r="14" fill="#80112c" />
+    <text x="28" y="303" fill="#ffffff" font-family="system-ui, sans-serif" font-weight="bold" font-size="10" text-anchor="middle">📦</text>
+    <text x="54" y="290" fill="#f5f5f7" font-family="system-ui, sans-serif" font-weight="bold" font-size="13">Role Petugas Gudang</text>
+    <text x="54" y="310" fill="#a1a1aa" font-family="system-ui, sans-serif" font-size="10">Pencatatan restock barang masuk &amp; peringatan stok tipis</text>
+
+    <!-- Tech Badges -->
+    <rect x="0" y="355" width="60" height="22" rx="4" fill="#240c1a" stroke="#80112c" stroke-width="0.6" />
+    <text x="30" y="369" fill="#f5f5f7" font-family="system-ui, sans-serif" font-size="9" text-anchor="middle">Flutter</text>
+
+    <rect x="68" y="355" width="50" height="22" rx="4" fill="#240c1a" stroke="#80112c" stroke-width="0.6" />
+    <text x="93" y="369" fill="#f5f5f7" font-family="system-ui, sans-serif" font-size="9" text-anchor="middle">Dart</text>
+
+    <rect x="126" y="355" width="65" height="22" rx="4" fill="#240c1a" stroke="#80112c" stroke-width="0.6" />
+    <text x="158" y="369" fill="#f5f5f7" font-family="system-ui, sans-serif" font-size="9" text-anchor="middle">Node.js</text>
+
+    <rect x="199" y="355" width="70" height="22" rx="4" fill="#240c1a" stroke="#80112c" stroke-width="0.6" />
+    <text x="234" y="369" fill="#f5f5f7" font-family="system-ui, sans-serif" font-size="9" text-anchor="middle">MongoDB</text>
+  </g>
+</svg>

@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="100%" height="100%">
+  <defs>
+    <radialGradient id="profileGlow" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#80112c" stop-opacity="0.8" />
+      <stop offset="50%" stop-color="#3b0a16" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#0e080c" stop-opacity="0.9" />
+    </radialGradient>
+    <linearGradient id="rimGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e63956" />
+      <stop offset="100%" stop-color="#4a0e17" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="600" rx="32" fill="#120a10" />
+  <circle cx="300" cy="280" r="240" fill="url(#profileGlow)" />
+  <circle cx="300" cy="280" r="238" fill="none" stroke="url(#rimGrad)" stroke-width="2" stroke-dasharray="12,8" opacity="0.4" />
+
+  <!-- Geometric Abstract Tech Accent Circles -->
+  <circle cx="300" cy="280" r="180" fill="none" stroke="#e63956" stroke-width="1" opacity="0.25" />
+  <circle cx="300" cy="280" r="140" fill="#1d0a15" stroke="#80112c" stroke-width="1.5" />
+
+  <!-- Stylized Monogram / Avatar Silhouette -->
+  <!-- Shoulders -->
+  <path d="M 170 510 C 170 420 220 375 300 375 C 380 375 430 420 430 510 Z" fill="#290e1b" stroke="#80112c" stroke-width="1.5" />
+  
+  <!-- Neck & Head -->
+  <rect x="275" y="320" width="50" height="65" rx="8" fill="#381426" />
+  <circle cx="300" cy="270" r="65" fill="#44182e" stroke="#80112c" stroke-width="1.5" />
+
+  <!-- Modern Tech Monogram Initials "JH" -->
+  <text x="300" y="285" fill="#f5f5f7" font-family="'Syne', 'Plus Jakarta Sans', system-ui, sans-serif" font-weight="900" font-size="44" text-anchor="middle" letter-spacing="2">JH</text>
+
+  <!-- Futuristic Corner Highlights -->
+  <path d="M 40 80 L 40 40 L 80 40" fill="none" stroke="#e63956" stroke-width="2.5" />
+  <path d="M 560 80 L 560 40 L 520 40" fill="none" stroke="#e63956" stroke-width="2.5" />
+  <path d="M 40 520 L 40 560 L 80 560" fill="none" stroke="#e63956" stroke-width="2.5" />
+  <path d="M 560 520 L 560 560 L 520 560" fill="none" stroke="#e63956" stroke-width="2.5" />
+
+  <!-- Badge at bottom -->
+  <rect x="180" y="520" width="240" height="38" rx="19" fill="#1b0813" stroke="#e63956" stroke-width="1.2" />
+  <circle cx="205" cy="539" r="5" fill="#10b981">
+    <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite" />
+  </circle>
+  <text x="315" y="544" fill="#f5f5f7" font-family="system-ui, sans-serif" font-size="12" font-weight="600" text-anchor="middle">Josua Abrianto Harianja</text>
+</svg>

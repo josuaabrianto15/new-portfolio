@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="rbBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0508" />
+      <stop offset="50%" stop-color="#190712" />
+      <stop offset="100%" stop-color="#080306" />
+    </linearGradient>
+    <linearGradient id="rbAccent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#80112c" />
+      <stop offset="100%" stop-color="#e63956" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#rbBg)" />
+
+  <!-- Ambient Glow -->
+  <circle cx="240" cy="180" r="170" fill="#80112c" opacity="0.3" filter="blur(70px)" />
+  <circle cx="680" cy="360" r="140" fill="#e63956" opacity="0.18" filter="blur(60px)" />
+
+  <!-- Window Chrome -->
+  <rect x="40" y="30" width="720" height="440" rx="16" fill="#11070e" stroke="#80112c" stroke-width="1.2" stroke-opacity="0.4" />
+  <rect x="40" y="30" width="720" height="42" rx="16" fill="#1b0814" />
+  <circle cx="68" cy="51" r="5" fill="#e63956" opacity="0.8" />
+  <circle cx="85" cy="51" r="5" fill="#f59e0b" opacity="0.8" />
+  <circle cx="102" cy="51" r="5" fill="#10b981" opacity="0.8" />
+  <rect x="130" y="42" width="280" height="18" rx="6" fill="#280e1e" />
+  <text x="145" y="55" fill="#a1a1aa" font-family="system-ui, sans-serif" font-size="10">ruangbelajar.edu/admin/pendaftar-siswa</text>
+
+  <!-- Top Navigation inside Mockup -->
+  <text x="70" y="105" fill="#ffffff" font-family="system-ui, sans-serif" font-weight="900" font-size="16">RUANG BELAJAR<span fill="#e63956">.</span></text>
+  
+  <rect x="250" y="92" width="60" height="18" rx="4" fill="#290e1f" />
+  <text x="280" y="105" fill="#e63956" font-family="system-ui, sans-serif" font-size="9" text-anchor="middle">Programs</text>
+  <text x="340" y="105" fill="#a1a1aa" font-family="system-ui, sans-serif" font-size="9">Testimoni</text>
+  <text x="400" y="105" fill="#a1a1aa" font-family="system-ui, sans-serif" font-size="9">Kontak</text>
+
+  <rect x="620" y="90" width="110" height="26" rx="6" fill="url(#rbAccent)" />
+  <text x="675" y="107" fill="#ffffff" font-family="system-ui, sans-serif" font-size="10" font-weight="bold" text-anchor="middle">Panel Admin ⚡</text>
+
+  <!-- Split Screen: Left Public Web Showcase, Right Admin CMS Panel -->
+  <!-- Left Side: Public Landing Banner -->
+  <rect x="70" y="130" width="320" height="145" rx="10" fill="#190913" stroke="#80112c" stroke-width="0.8" />
+  <rect x="85" y="145" width="90" height="18" rx="4" fill="#300f21" stroke="#e63956" stroke-width="0.7" />
+  <text x="130" y="157" fill="#e63956" font-family="system-ui, sans-serif" font-size="8" font-weight="bold" text-anchor="middle">BIMBEL MODERN</text>
+  <text x="85" y="185" fill="#ffffff" font-family="system-ui, sans-serif" font-weight="bold" font-size="16">Raih Kampus Impian Bersama Kami</text>
+  <text x="85" y="205" fill="#a1a1aa" font-family="system-ui, sans-serif" font-size="10">Kurikulum terarah, tryout berkala &amp; pendampingan intensif.</text>
+  <rect x="85" y="225" width="110" height="28" rx="6" fill="#e63956" />
+  <text x="140" y="243" fill="#ffffff" font-family="system-ui, sans-serif" font-size="9" font-weight="bold" text-anchor="middle">Daftar Sekarang →</text>
+
+  <!-- Left Side: Program Belajar Grid -->
+  <rect x="70" y="290" width="150" height="150" rx="8" fill="#1b0a15" stroke="#80112c" stroke-width="0.7" />
+  <rect x="82" y="304" width="30" height="30" rx="6" fill="#360f26" />
+  <text x="97" y="324" fill="#e63956" font-family="system-ui, sans-serif" font-size="12" text-anchor="middle">🎓</text>
+  <text x="82" y="352" fill="#ffffff" font-family="system-ui, sans-serif" font-weight="bold" font-size="12">Intensif UTBK</text>
+  <text x="82" y="370" fill="#a1a1aa" font-family="system-ui, sans-serif" font-size="9">Simulasi CAT &amp; Bedah Soal</text>
+  <text x="82" y="415" fill="#e63956" font-family="system-ui, sans-serif" font-weight="bold" font-size="12">Rp 499k/bln</text>
+
+  <rect x="235" y="290" width="155" height="150" rx="8" fill="#1b0a15" stroke="#80112c" stroke-width="0.7" />
+  <rect x="247" y="304" width="30" height="30" rx="6" fill="#360f26" />
+  <text x="262" y="324" fill="#10b981" font-family="system-ui, sans-serif" font-size="12" text-anchor="middle">🔬</text>
+  <text x="247" y="352" fill="#ffffff" font-family="system-ui, sans-serif" font-weight="bold" font-size="12">Sains &amp; Teknologi</text>
+  <text x="247" y="370" fill="#a1a1aa" font-family="system-ui, sans-serif" font-size="9">Matematika, Fisika, Kimia</text>
+  <text x="247" y="415" fill="#e63956" font-family="system-ui, sans-serif" font-weight="bold" font-size="12">Rp 450k/bln</text>
+
+  <!-- Right Side: Admin CMS Dashboard -->
+  <rect x="410" y="130" width="320" height="310" rx="10" fill="#180812" stroke="#80112c" stroke-width="0.9" />
+  
+  <!-- CMS Top Bar -->
+  <text x="430" y="160" fill="#ffffff" font-family="system-ui, sans-serif" font-weight="bold" font-size="14">Data Pendaftaran Siswa</text>
+  <rect x="620" y="145" width="95" height="24" rx="5" fill="#10b981" />
+  <text x="667" y="161" fill="#ffffff" font-family="system-ui, sans-serif" font-size="9" font-weight="bold" text-anchor="middle">📥 Ekspor CSV</text>
+
+  <!-- Stat Pills -->
+  <rect x="430" y="180" width="85" height="42" rx="6" fill="#240c1b" stroke="#80112c" stroke-width="0.6" />
+  <text x="440" y="196" fill="#71717a" font-family="system-ui, sans-serif" font-size="8">TOTAL SISWA</text>
+  <text x="440" y="213" fill="#ffffff" font-family="system-ui, sans-serif" font-weight="bold" font-size="12">342</text>
+
+  <rect x="525" y="180" width="85" height="42" rx="6" fill="#240c1b" stroke="#80112c" stroke-width="0.6" />
+  <text x="535" y="196" fill="#71717a" font-family="system-ui, sans-serif" font-size="8">PROGRAM AKTIF</text>
+  <text x="535" y="213" fill="#10b981" font-family="system-ui, sans-serif" font-weight="bold" font-size="12">12</text>
+
+  <rect x="620" y="180" width="95" height="42" rx="6" fill="#240c1b" stroke="#80112c" stroke-width="0.6" />
+  <text x="630" y="196" fill="#71717a" font-family="system-ui, sans-serif" font-size="8">PENDAPATAN</text>
+  <text x="630" y="213" fill="#e63956" font-family="system-ui, sans-serif" font-weight="bold" font-size="11">Rp 84.5M</text>
+
+  <!-- Student Table Row 1 -->
+  <rect x="430" y="235" width="285" height="44" rx="6" fill="#200a17" stroke="#80112c" stroke-width="0.6" />
+  <circle cx="450" cy="257" r="10" fill="#e63956" />
+  <text x="450" y="261" fill="#ffffff" font-family="system-ui, sans-serif" font-size="9" text-anchor="middle">JA</text>
+  <text x="470" y="252" fill="#ffffff" font-family="system-ui, sans-serif" font-size="10" font-weight="600">Josua Harianja</text>
+  <text x="470" y="267" fill="#a1a1aa" font-family="system-ui, sans-serif" font-size="8">Intensif UTBK • Terverifikasi</text>
+  <rect x="655" y="248" width="50" height="18" rx="4" fill="#10b981" fill-opacity="0.2" stroke="#10b981" stroke-width="0.8" />
+  <text x="680" y="260" fill="#10b981" font-family="system-ui, sans-serif" font-size="8" text-anchor="middle">Lunas</text>
+
+  <!-- Student Table Row 2 -->
+  <rect x="430" y="287" width="285" height="44" rx="6" fill="#200a17" stroke="#80112c" stroke-width="0.6" />
+  <circle cx="450" cy="309" r="10" fill="#80112c" />
+  <text x="450" y="313" fill="#ffffff" font-family="system-ui, sans-serif" font-size="9" text-anchor="middle">AN</text>
+  <text x="470" y="304" fill="#ffffff" font-family="system-ui, sans-serif" font-size="10" font-weight="600">Annisa Putri</text>
+  <text x="470" y="319" fill="#a1a1aa" font-family="system-ui, sans-serif" font-size="8">Saintek Reguler • Terverifikasi</text>
+  <rect x="655" y="300" width="50" height="18" rx="4" fill="#10b981" fill-opacity="0.2" stroke="#10b981" stroke-width="0.8" />
+  <text x="680" y="312" fill="#10b981" font-family="system-ui, sans-serif" font-size="8" text-anchor="middle">Lunas</text>
+
+  <!-- Student Table Row 3 -->
+  <rect x="430" y="339" width="285" height="44" rx="6" fill="#200a17" stroke="#80112c" stroke-width="0.6" />
+  <circle cx="450" cy="361" r="10" fill="#381024" />
+  <text x="450" y="365" fill="#ffffff" font-family="system-ui, sans-serif" font-size="9" text-anchor="middle">RP</text>
+  <text x="470" y="356" fill="#ffffff" font-family="system-ui, sans-serif" font-size="10" font-weight="600">Rizky Pratama</text>
+  <text x="470" y="371" fill="#a1a1aa" font-family="system-ui, sans-serif" font-size="8">Soshum Reguler • Menunggu</text>
+  <rect x="655" y="352" width="50" height="18" rx="4" fill="#f59e0b" fill-opacity="0.2" stroke="#f59e0b" stroke-width="0.8" />
+  <text x="680" y="364" fill="#f59e0b" font-family="system-ui, sans-serif" font-size="8" text-anchor="middle">Pending</text>
+
+  <!-- Bottom CMS Badge -->
+  <text x="430" y="420" fill="#71717a" font-family="system-ui, sans-serif" font-size="9">Laravel 13 • Blade • Tailwind CSS 4 • Axios</text>
+</svg>
