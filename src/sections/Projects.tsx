@@ -88,7 +88,7 @@ const Projects = () => {
             className="flex gap-8 overflow-x-auto pb-8 snap-x snap-mandatory hide-scrollbar"
             style={{ scrollbarWidth: 'none' }}
           >
-            {projects.map((project, index) => (
+            {projects.map((project) => (
               <motion.div
                 key={project.title}
                 variants={itemVariants}
@@ -155,7 +155,7 @@ const Projects = () => {
                     {/* Links */}
                     <div className="flex gap-3 mt-auto">
                       {/* SimToko has both web and mobile */}
-                      {project.title === 'SimToko' ? (
+                      {project.title === 'SimToko' && 'web' in project.links && 'mobile' in project.links ? (
                         <>
                           <motion.a
                             href={project.links.web}
@@ -180,7 +180,7 @@ const Projects = () => {
                         </>
                       ) : (
                         <>
-                          {project.links.demo && (
+                          {'demo' in project.links && project.links.demo && (
                             <motion.a
                               href={project.links.demo}
                               target="_blank"
@@ -192,16 +192,18 @@ const Projects = () => {
                               {language === 'en' ? 'Live Demo →' : 'Demo Langsung →'}
                             </motion.a>
                           )}
-                          <motion.a
-                            href={project.links.github}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className={`${project.links.demo ? 'flex-1' : 'w-full'} px-4 py-3 border border-text-primary text-text-primary font-mono text-xs text-center hover:bg-text-primary hover:text-bg-primary transition-colors`}
-                            whileHover={{ scale: 1.02 }}
-                            whileTap={{ scale: 0.98 }}
-                          >
-                            {t('proj.code')}
-                          </motion.a>
+                          {'github' in project.links && project.links.github && (
+                            <motion.a
+                              href={project.links.github}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className={`${'demo' in project.links && project.links.demo ? 'flex-1' : 'w-full'} px-4 py-3 border border-text-primary text-text-primary font-mono text-xs text-center hover:bg-text-primary hover:text-bg-primary transition-colors`}
+                              whileHover={{ scale: 1.02 }}
+                              whileTap={{ scale: 0.98 }}
+                            >
+                              {t('proj.code')}
+                            </motion.a>
+                          )}
                         </>
                       )}
                     </div>

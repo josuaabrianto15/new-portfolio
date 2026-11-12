@@ -31,7 +31,7 @@ const FloatingNav = () => {
     >
       <div className="bg-bg-primary/80 backdrop-blur-xl border border-border-subtle rounded-full px-4 py-3 shadow-2xl">
         <div className="flex items-center gap-2">
-          {navItems.map((item, index) => (
+          {navItems.map((item) => (
             <motion.button
               key={item.href}
               onClick={() => scrollToSection(item.href)}
