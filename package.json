@@ -1,0 +1,45 @@
+{
+  "name": "portofolio",
+  "version": "1.0.0",
+  "description": "Website portofolio pribadi modern, profesional, dan futuristik dengan interpretasi orisinal dari gaya visual **Awwwards**: minimalis, berani, tipografi berukuran besar, ruang kosong elegan, dan berfokus penuh pada proyek.",
+  "main": "script.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/josuaabrianto15/portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/josuaabrianto15/portfolio/issues"
+  },
+  "homepage": "https://github.com/josuaabrianto15/portfolio#readme",
+  "dependencies": {
+    "@react-three/drei": "^10.7.9",
+    "@react-three/fiber": "^9.8.2",
+    "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "autoprefixer": "^10.6.2",
+    "framer-motion": "^14.9.0",
+    "lucide-react": "^1.72.0",
+    "next": "^16.4.5",
+    "postcss": "^8.5.32",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "tailwindcss": "^4.3.4",
+    "three": "^0.187.0",
+    "typescript": "^7.0.2"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.4",
+    "@types/three": "^0.187.0",
+    "@vitejs/plugin-react": "^6.2.1",
+    "vite": "^8.3.5"
+  }
+}
