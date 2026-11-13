@@ -88,81 +88,224 @@ const Projects = () => {
             className="flex gap-8 overflow-x-auto pb-8 snap-x snap-mandatory hide-scrollbar"
             style={{ scrollbarWidth: 'none' }}
           >
-            {projects.map((project) => (
+            {projects.map((project) => {
+              const isRuangBelajar = project.title === 'RuangBelajar'
+              const hasMany = isRuangBelajar
+              
+              return (
               <motion.div
                 key={project.title}
                 variants={itemVariants}
-                className="flex-shrink-0 w-[90vw] md:w-[70vw] lg:w-[600px] snap-center"
+                className="flex-shrink-0 w-[90vw] md:w-[70vw] lg:w-[700px] snap-center group"
               >
-                <div className="bg-bg-primary border border-border-subtle h-full flex flex-col">
-                  {/* Image */}
-                  <div className="relative aspect-video overflow-hidden group">
-                    <img
-                      src={project.images[0]}
-                      alt={project.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 border-2 border-transparent group-hover:border-accent-crimson transition-colors" />
-                    
-                    {/* Category Badge */}
-                    <div className="absolute top-4 left-4 px-3 py-1 bg-bg-primary/90 backdrop-blur-sm border border-accent-amber">
-                      <p className="font-mono text-xs text-accent-amber uppercase">
-                        {project.category}
-                      </p>
+                <div className="relative bg-gradient-to-br from-accent-crimson/5 via-bg-primary to-accent-amber/5 border border-border-subtle h-full flex flex-col overflow-hidden">
+                  {/* Project showcase with multiple screenshots */}
+                  <div className="relative p-6 min-h-[450px] bg-gradient-to-br from-bg-secondary via-bg-primary to-bg-secondary overflow-hidden">
+                    {/* Background gradient blobs */}
+                    <div className="absolute inset-0 opacity-10">
+                      <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-accent-crimson rounded-full blur-3xl animate-pulse" />
+                      <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-accent-amber rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
                     </div>
+
+                    {/* Dynamic layout based on project */}
+                    {hasMany ? (
+                      // Layout for SimToko & RuangBelajar - balanced mosaic grid
+                      <div className="relative flex gap-3 h-full">
+                        {/* Left column - 3 screenshots stacked */}
+                        <div className="flex-1 flex flex-col gap-3">
+                          <motion.div
+                            className="relative flex-1 transform -rotate-1 group-hover:rotate-0 transition-transform duration-500"
+                            whileHover={{ scale: 1.03 }}
+                          >
+                            <div className="relative h-full bg-bg-primary border-2 border-accent-crimson/30 rounded-lg overflow-hidden shadow-xl">
+                              <div className="flex items-center gap-2 px-3 py-2 bg-bg-secondary border-b border-border-subtle">
+                                <div className="flex gap-1.5">
+                                  <div className="w-2 h-2 rounded-full bg-accent-crimson" />
+                                  <div className="w-2 h-2 rounded-full bg-accent-amber" />
+                                  <div className="w-2 h-2 rounded-full bg-text-secondary/50" />
+                                </div>
+                              </div>
+                              <img src={project.images[0]} alt={project.title} className="w-full h-full object-cover" />
+                            </div>
+                            <div className="absolute -inset-3 bg-gradient-to-r from-accent-crimson/20 to-accent-amber/20 rounded-lg blur-xl -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                          </motion.div>
+
+                          {project.images[1] && (
+                            <motion.div
+                              className="relative flex-1 transform rotate-2 group-hover:rotate-0 transition-transform duration-500"
+                              whileHover={{ scale: 1.03 }}
+                            >
+                              <div className="relative h-full bg-bg-primary border border-accent-amber/30 rounded-lg overflow-hidden shadow-lg">
+                                <img src={project.images[1]} alt={`${project.title} - 2`} className="w-full h-full object-cover" />
+                              </div>
+                            </motion.div>
+                          )}
+
+                          {project.images[2] && (
+                            <motion.div
+                              className="relative flex-1 transform rotate-1 group-hover:rotate-0 transition-transform duration-500"
+                              whileHover={{ scale: 1.03 }}
+                            >
+                              <div className="relative h-full bg-bg-primary border border-accent-crimson/30 rounded-lg overflow-hidden shadow-lg">
+                                <img src={project.images[2]} alt={`${project.title} - 3`} className="w-full h-full object-cover" />
+                              </div>
+                            </motion.div>
+                          )}
+                        </div>
+
+                        {/* Right column - 2-3 screenshots stacked */}
+                        <div className="flex-1 flex flex-col gap-3">
+                          {project.images[3] && (
+                            <motion.div
+                              className="relative flex-1 transform -rotate-2 group-hover:rotate-0 transition-transform duration-500"
+                              whileHover={{ scale: 1.03 }}
+                            >
+                              <div className="relative h-full bg-bg-primary border border-accent-amber/30 rounded-lg overflow-hidden shadow-lg">
+                                <img src={project.images[3]} alt={`${project.title} - 4`} className="w-full h-full object-cover" />
+                              </div>
+                            </motion.div>
+                          )}
+
+                          {project.images[4] && (
+                            <motion.div
+                              className="relative flex-1 transform rotate-2 group-hover:rotate-0 transition-transform duration-500"
+                              whileHover={{ scale: 1.03 }}
+                            >
+                              <div className="relative h-full bg-bg-primary border border-accent-crimson/30 rounded-lg overflow-hidden shadow-lg">
+                                <img src={project.images[4]} alt={`${project.title} - 5`} className="w-full h-full object-cover" />
+                              </div>
+                            </motion.div>
+                          )}
+
+                          {project.images[5] && (
+                            <motion.div
+                              className="relative flex-1 transform -rotate-1 group-hover:rotate-0 transition-transform duration-500"
+                              whileHover={{ scale: 1.03 }}
+                            >
+                              <div className="relative h-full bg-bg-primary border border-accent-amber/30 rounded-lg overflow-hidden shadow-lg">
+                                <img src={project.images[5]} alt={`${project.title} - 6`} className="w-full h-full object-cover" />
+                              </div>
+                            </motion.div>
+                          )}
+                        </div>
+                      </div>
+                    ) : (
+                      // Original 3-image layout for iGUN
+                      <div className="relative grid grid-cols-12 gap-4 h-full">
+                        <div className="col-span-7 relative">
+                          <motion.div
+                            className="relative h-full transform -rotate-2 group-hover:rotate-0 transition-transform duration-500"
+                            whileHover={{ scale: 1.05 }}
+                          >
+                            <div className="relative h-full bg-bg-primary border-2 border-accent-crimson/30 rounded-lg overflow-hidden shadow-2xl">
+                              <div className="flex items-center gap-2 px-3 py-2 bg-bg-secondary border-b border-border-subtle">
+                                <div className="flex gap-1.5">
+                                  <div className="w-2.5 h-2.5 rounded-full bg-accent-crimson" />
+                                  <div className="w-2.5 h-2.5 rounded-full bg-accent-amber" />
+                                  <div className="w-2.5 h-2.5 rounded-full bg-text-secondary/50" />
+                                </div>
+                              </div>
+                              <img src={project.images[0]} alt={project.title} className="w-full h-full object-cover" />
+                            </div>
+                            <div className="absolute -inset-4 bg-gradient-to-r from-accent-crimson/20 to-accent-amber/20 rounded-lg blur-xl -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                          </motion.div>
+                        </div>
+                        <div className="col-span-5 flex flex-col gap-4">
+                          {project.images[1] && (
+                            <motion.div
+                              className="relative flex-1 transform rotate-2 group-hover:rotate-0 transition-transform duration-500"
+                              whileHover={{ scale: 1.05 }}
+                            >
+                              <div className="relative h-full bg-bg-primary border border-accent-amber/30 rounded-lg overflow-hidden shadow-xl">
+                                <img src={project.images[1]} alt={`${project.title} - 2`} className="w-full h-full object-cover" />
+                              </div>
+                            </motion.div>
+                          )}
+                          {project.images[2] && (
+                            <motion.div
+                              className="relative flex-1 transform rotate-1 group-hover:rotate-0 transition-transform duration-500"
+                              whileHover={{ scale: 1.05 }}
+                            >
+                              <div className="relative h-full bg-bg-primary border border-accent-crimson/30 rounded-lg overflow-hidden shadow-xl">
+                                <img src={project.images[2]} alt={`${project.title} - 3`} className="w-full h-full object-cover" />
+                              </div>
+                            </motion.div>
+                          )}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Category badge - floating */}
+                    <div className="absolute top-10 right-10 px-4 py-2 bg-accent-amber text-bg-primary font-mono text-xs uppercase tracking-wider shadow-lg transform -rotate-3 z-20">
+                      {project.category}
+                    </div>
+
+                    {/* Decorative elements */}
+                    <div className="absolute top-6 left-6 w-12 h-12 border-2 border-accent-crimson/20 rounded-lg transform rotate-12 z-0" />
+                    <div className="absolute bottom-6 right-6 w-10 h-10 border-2 border-accent-amber/20 rounded-full z-0" />
                   </div>
 
-                  {/* Content */}
-                  <div className="p-6 flex-1 flex flex-col">
-                    <h4 className="font-display text-3xl font-bold text-text-primary mb-4">
+                  {/* Content section */}
+                  <div className="relative p-8 flex-1 flex flex-col bg-bg-primary">
+                    <h4 className="font-display text-3xl font-bold text-text-primary mb-2 group-hover:text-accent-crimson transition-colors">
                       {project.title}
                     </h4>
+                    <div className="w-16 h-1 bg-gradient-to-r from-accent-crimson to-accent-amber mb-6" />
 
-                    <div className="mb-4">
-                      <p className="font-mono text-xs text-text-secondary uppercase mb-2">{t('proj.problem')}</p>
-                      <p className="font-body text-sm text-text-secondary leading-relaxed line-clamp-2">
-                        {project.problem}
-                      </p>
+                    <div className="grid grid-cols-2 gap-4 mb-4">
+                      <div>
+                        <p className="font-mono text-xs text-accent-crimson uppercase mb-2 flex items-center gap-2">
+                          <span className="w-2 h-2 bg-accent-crimson rounded-full" />
+                          {t('proj.problem')}
+                        </p>
+                        <p className="font-body text-xs text-text-secondary leading-relaxed line-clamp-3">
+                          {project.problem}
+                        </p>
+                      </div>
+                      <div>
+                        <p className="font-mono text-xs text-accent-amber uppercase mb-2 flex items-center gap-2">
+                          <span className="w-2 h-2 bg-accent-amber rounded-full" />
+                          {t('proj.solution')}
+                        </p>
+                        <p className="font-body text-xs text-text-secondary leading-relaxed line-clamp-3">
+                          {project.solution}
+                        </p>
+                      </div>
                     </div>
 
-                    <div className="mb-4">
-                      <p className="font-mono text-xs text-text-secondary uppercase mb-2">{t('proj.solution')}</p>
-                      <p className="font-body text-sm text-text-primary leading-relaxed line-clamp-3">
-                        {project.solution}
-                      </p>
+                    <div className="mb-4 p-3 bg-bg-secondary border-l-2 border-accent-amber">
+                      <p className="font-mono text-xs text-text-secondary uppercase mb-1">{t('proj.role')}</p>
+                      <p className="font-body text-sm text-accent-amber font-semibold">{project.role}</p>
                     </div>
 
-                    <div className="mb-4">
-                      <p className="font-mono text-xs text-text-secondary uppercase mb-2">{t('proj.role')}</p>
-                      <p className="font-body text-sm text-text-primary">{project.role}</p>
-                    </div>
-
-                    {/* Tech Stack */}
                     <div className="mb-6">
                       <p className="font-mono text-xs text-text-secondary uppercase mb-2">{t('proj.stack')}</p>
-                      <div className="flex flex-wrap gap-2">
-                        {project.stack.map((tech) => (
+                      <div className="flex flex-wrap gap-1.5">
+                        {project.stack.slice(0, 6).map((tech) => (
                           <span
                             key={tech}
-                            className="px-2 py-1 bg-bg-secondary border border-border-subtle font-mono text-xs text-text-primary"
+                            className="px-2 py-1 bg-gradient-to-r from-accent-crimson/10 to-accent-amber/10 border border-accent-crimson/20 font-mono text-xs text-text-primary hover:border-accent-crimson transition-colors"
                           >
                             {tech}
                           </span>
                         ))}
+                        {project.stack.length > 6 && (
+                          <span className="px-2 py-1 font-mono text-xs text-text-secondary">
+                            +{project.stack.length - 6}
+                          </span>
+                        )}
                       </div>
                     </div>
 
-                    {/* Links */}
                     <div className="flex gap-3 mt-auto">
-                      {/* SimToko has both web and mobile */}
                       {project.title === 'SimToko' && 'web' in project.links && 'mobile' in project.links ? (
                         <>
                           <motion.a
                             href={project.links.web}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex-1 px-4 py-3 bg-accent-crimson text-text-primary font-mono text-xs text-center hover:bg-accent-crimson/80 transition-colors"
-                            whileHover={{ scale: 1.02 }}
+                            className="flex-1 px-4 py-3 bg-gradient-to-r from-accent-crimson to-accent-crimson/80 text-text-primary font-mono text-xs text-center uppercase tracking-wider hover:shadow-lg hover:shadow-accent-crimson/50 transition-all"
+                            whileHover={{ scale: 1.02, y: -2 }}
                             whileTap={{ scale: 0.98 }}
                           >
                             Web →
@@ -171,8 +314,8 @@ const Projects = () => {
                             href={project.links.mobile}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex-1 px-4 py-3 border border-text-primary text-text-primary font-mono text-xs text-center hover:bg-text-primary hover:text-bg-primary transition-colors"
-                            whileHover={{ scale: 1.02 }}
+                            className="flex-1 px-4 py-3 border-2 border-accent-amber text-accent-amber font-mono text-xs text-center uppercase tracking-wider hover:bg-accent-amber hover:text-bg-primary transition-all"
+                            whileHover={{ scale: 1.02, y: -2 }}
                             whileTap={{ scale: 0.98 }}
                           >
                             Mobile →
@@ -185,11 +328,11 @@ const Projects = () => {
                               href={project.links.demo}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="flex-1 px-4 py-3 bg-accent-crimson text-text-primary font-mono text-xs text-center hover:bg-accent-crimson/80 transition-colors"
-                              whileHover={{ scale: 1.02 }}
+                              className="flex-1 px-4 py-3 bg-gradient-to-r from-accent-crimson to-accent-crimson/80 text-text-primary font-mono text-xs text-center uppercase tracking-wider hover:shadow-lg hover:shadow-accent-crimson/50 transition-all"
+                              whileHover={{ scale: 1.02, y: -2 }}
                               whileTap={{ scale: 0.98 }}
                             >
-                              {language === 'en' ? 'Live Demo →' : 'Demo Langsung →'}
+                              {language === 'en' ? 'Live Demo' : 'Demo'} →
                             </motion.a>
                           )}
                           {'github' in project.links && project.links.github && (
@@ -197,11 +340,11 @@ const Projects = () => {
                               href={project.links.github}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className={`${'demo' in project.links && project.links.demo ? 'flex-1' : 'w-full'} px-4 py-3 border border-text-primary text-text-primary font-mono text-xs text-center hover:bg-text-primary hover:text-bg-primary transition-colors`}
-                              whileHover={{ scale: 1.02 }}
+                              className={`${'demo' in project.links && project.links.demo ? 'flex-1' : 'w-full'} px-4 py-3 border-2 border-accent-amber text-accent-amber font-mono text-xs text-center uppercase tracking-wider hover:bg-accent-amber hover:text-bg-primary transition-all`}
+                              whileHover={{ scale: 1.02, y: -2 }}
                               whileTap={{ scale: 0.98 }}
                             >
-                              {t('proj.code')}
+                              GitHub →
                             </motion.a>
                           )}
                         </>
@@ -210,7 +353,7 @@ const Projects = () => {
                   </div>
                 </div>
               </motion.div>
-            ))}
+            )})}
           </motion.div>
 
           {/* Gradient fade edges */}

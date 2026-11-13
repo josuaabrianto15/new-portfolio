@@ -4,7 +4,10 @@ export const projectsData = {
     images: [
       '/assets/images/simtoko-web.jpg',
       '/assets/images/simtoko-web-kasir.jpg',
+      '/assets/images/simtoko-web-gudang.jpg',
       '/assets/images/simtoko-mobile.jpg',
+      '/assets/images/simtoko-mobile-kasir.png',
+      '/assets/images/simtoko-mobile-owner.jpg',
     ],
     features: {
       en: ['Multi-role authentication', 'Real-time inventory', 'Sales analytics', 'Mobile sync'],
@@ -21,7 +24,9 @@ export const projectsData = {
     images: [
       '/assets/images/ruangbelajar.png',
       '/assets/images/ruangbelajar-program.png',
+      '/assets/images/ruangbelajar-beranda.png',
       '/assets/images/ruangbelajar-admin.png',
+      '/assets/images/ruangbelajar-tentang.png',
     ],
     features: {
       en: ['Real-time slot validation', 'Student registration', 'Admin dashboard', 'API integration'],

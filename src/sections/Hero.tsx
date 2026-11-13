@@ -1,12 +1,14 @@
-import { Suspense, useState, useEffect } from 'react'
+import { Suspense, useState, useEffect, useRef } from 'react'
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import AbstractShape from '../components/AbstractShape'
 import { useLanguage } from '../contexts/LanguageContext'
 
 const Hero = () => {
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false)
+  const [showCVDropdown, setShowCVDropdown] = useState(false)
+  const dropdownRef = useRef<HTMLDivElement>(null)
   const { t } = useLanguage()
 
   useEffect(() => {
@@ -17,6 +19,28 @@ const Hero = () => {
     mediaQuery.addEventListener('change', handler)
     return () => mediaQuery.removeEventListener('change', handler)
   }, [])
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setShowCVDropdown(false)
+      }
+    }
+
+    if (showCVDropdown) {
+      document.addEventListener('mousedown', handleClickOutside)
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [showCVDropdown])
+
+  const cvLinks = {
+    id: 'https://drive.google.com/file/d/1-ST_N6s3abZLHt0RbtfiCflBv3rB2U3Z/view?usp=sharing',
+    en: 'https://drive.google.com/file/d/1v7v_ks6H38zWMupUSkwxBE3GA1eTp_ne/view?usp=sharing'
+  }
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -158,6 +182,57 @@ const Hero = () => {
               >
                 {t('hero.cta.contact')}
               </motion.a>
+              
+              {/* Download CV Button with Dropdown */}
+              <div className="relative" ref={dropdownRef}>
+                <motion.button
+                  onClick={() => setShowCVDropdown(!showCVDropdown)}
+                  className="px-8 py-4 border border-accent-amber text-accent-amber font-mono text-sm uppercase tracking-wider hover:bg-accent-amber hover:text-bg-primary transition-colors"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Download CV
+                  <svg 
+                    className={`inline-block ml-2 w-4 h-4 transition-transform ${showCVDropdown ? 'rotate-180' : ''}`} 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </motion.button>
+
+                <AnimatePresence>
+                  {showCVDropdown && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      transition={{ duration: 0.2 }}
+                      className="absolute top-full mt-2 left-0 w-64 bg-bg-primary border border-border-subtle shadow-2xl z-50"
+                    >
+                      <a
+                        href={cvLinks.id}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block px-6 py-4 font-mono text-sm text-text-primary hover:bg-accent-crimson/10 hover:text-accent-crimson transition-colors border-b border-border-subtle"
+                        onClick={() => setShowCVDropdown(false)}
+                      >
+                        🇮🇩 CV Bahasa Indonesia
+                      </a>
+                      <a
+                        href={cvLinks.en}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block px-6 py-4 font-mono text-sm text-text-primary hover:bg-accent-crimson/10 hover:text-accent-crimson transition-colors"
+                        onClick={() => setShowCVDropdown(false)}
+                      >
+                        🇬🇧 CV English
+                      </a>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
             </motion.div>
           </motion.div>
 

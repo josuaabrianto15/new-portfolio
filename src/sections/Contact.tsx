@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
-import { useRef, useState } from 'react'
+import { useRef } from 'react'
 import { useLanguage } from '../contexts/LanguageContext'
 import { socialLinks } from '../data/projects'
 
@@ -8,25 +8,10 @@ const Contact = () => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
   const { t } = useLanguage()
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  })
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    console.log('Form submitted:', formData)
-    alert(t('contact.form.success'))
-    setFormData({ name: '', email: '', message: '' })
-  }
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    })
-  }
+  
+  // FormSubmit akan redirect ke halaman thank you setelah submit
+  // Ganti YOUR_EMAIL dengan email Anda yang sebenarnya
+  const formSubmitEmail = 'josuaabrianto15@gmail.com'
 
   const socialLinksData = [
     {
@@ -101,6 +86,34 @@ const Contact = () => {
                   </div>
                 </motion.a>
               ))}
+              
+              {/* CV Download Links */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="pt-6 border-t border-border-subtle"
+              >
+                <p className="font-mono text-xs text-text-secondary uppercase mb-3">Download CV</p>
+                <div className="flex flex-wrap gap-4">
+                  <a
+                    href="https://drive.google.com/file/d/1-ST_N6s3abZLHt0RbtfiCflBv3rB2U3Z/view?usp=sharing"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-4 py-2 border border-accent-amber text-accent-amber font-mono text-xs hover:bg-accent-amber hover:text-bg-primary transition-colors"
+                  >
+                    🇮🇩 ID
+                  </a>
+                  <a
+                    href="https://drive.google.com/file/d/1v7v_ks6H38zWMupUSkwxBE3GA1eTp_ne/view?usp=sharing"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-4 py-2 border border-accent-amber text-accent-amber font-mono text-xs hover:bg-accent-amber hover:text-bg-primary transition-colors"
+                  >
+                    🇬🇧 EN
+                  </a>
+                </div>
+              </motion.div>
             </div>
           </motion.div>
 
@@ -114,7 +127,16 @@ const Contact = () => {
               {t('contact.form.title')}
             </h4>
 
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form 
+              action={`https://formsubmit.co/${formSubmitEmail}`}
+              method="POST"
+              className="space-y-6"
+            >
+              {/* FormSubmit Configuration */}
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_subject" value="New Portfolio Contact Message!" />
+              <input type="hidden" name="_template" value="table" />
+              
               <div>
                 <label htmlFor="name" className="font-mono text-xs text-text-secondary uppercase mb-2 block">
                   {t('contact.form.name')}
@@ -123,8 +145,6 @@ const Contact = () => {
                   type="text"
                   id="name"
                   name="name"
-                  value={formData.name}
-                  onChange={handleChange}
                   required
                   className="w-full px-4 py-3 bg-bg-primary border border-border-subtle text-text-primary font-body focus:outline-none focus:border-accent-crimson transition-colors"
                   placeholder={t('contact.form.name.placeholder')}
@@ -139,8 +159,6 @@ const Contact = () => {
                   type="email"
                   id="email"
                   name="email"
-                  value={formData.email}
-                  onChange={handleChange}
                   required
                   className="w-full px-4 py-3 bg-bg-primary border border-border-subtle text-text-primary font-body focus:outline-none focus:border-accent-crimson transition-colors"
                   placeholder={t('contact.form.email.placeholder')}
@@ -154,8 +172,6 @@ const Contact = () => {
                 <textarea
                   id="message"
                   name="message"
-                  value={formData.message}
-                  onChange={handleChange}
                   required
                   rows={6}
                   className="w-full px-4 py-3 bg-bg-primary border border-border-subtle text-text-primary font-body focus:outline-none focus:border-accent-crimson transition-colors resize-none"
