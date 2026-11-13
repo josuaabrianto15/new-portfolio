@@ -29,7 +29,7 @@ const FloatingNav = () => {
       transition={{ delay: 1, duration: 0.6 }}
       className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50"
     >
-      <div className="bg-bg-primary/80 backdrop-blur-xl border border-border-subtle rounded-full px-4 py-3 shadow-2xl">
+      <div className="bg-bg-primary/20 backdrop-blur-xl border border-border-subtle rounded-full px-4 py-3 shadow-2xl">
         <div className="flex items-center gap-2">
           {navItems.map((item) => (
             <motion.button
